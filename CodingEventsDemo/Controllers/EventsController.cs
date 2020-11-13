@@ -16,9 +16,9 @@ namespace coding_events_practice.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.events = EventData.GetAll();
+            List<Event> events = new List<Event>(EventData.GetAll());
 
-            return View();
+            return View(events);
         }
 
         public IActionResult Add()
@@ -53,5 +53,21 @@ namespace coding_events_practice.Controllers
 
             return Redirect("/Events");
         }
+
+
+        [Route("/Events/Edit/{eventId?}")]
+        public IActionResult Edit(int eventId)
+        {
+            //controller code
+            ViewBag.item = EventData.GetById(eventId);
+            return View();
+        }
+
+        //[HttpPost]
+        //[Route("Events/Edit")]
+        //public IActionResult SubmitEditEventForm(int eventId, string name, string description)
+        //{
+
+        //}
     }
 }
