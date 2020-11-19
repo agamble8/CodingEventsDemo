@@ -31,15 +31,19 @@ else
             <th>
                 Contact Email
             </th>
+            <th>
+                Type
+            </th>
         </tr>
         @foreach (var evt in Model)
         {
-            <tr>
-                <td>@evt.Id</td>
-                <td>@evt.Name</td>
-                <td>@evt.Description</td>
-                <td>@evt.ContactEmail</td>
-            </tr>
+    <tr>
+        <td>@evt.Id</td>
+        <td>@evt.Name</td>
+        <td>@evt.Description</td>
+        <td>@evt.ContactEmail</td>
+        <td>@evt.Type</td>
+    </tr>
         }
     </table>
 }
