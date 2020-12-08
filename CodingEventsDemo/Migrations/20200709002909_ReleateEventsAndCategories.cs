@@ -6,20 +6,20 @@ namespace CodingEventsDemo.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Type",
-                table: "Events");
+            //migrationBuilder.DropColumn(
+            //    name: "Type",
+            //    table: "Events");
 
-            migrationBuilder.AddColumn<int>(
-                name: "CategoryId",
-                table: "Events",
-                nullable: false,
-                defaultValue: 0);
+            //migrationBuilder.AddColumn<int>(
+            //    name: "CategoryId",
+            //    table: "Events",
+            //    nullable: false,
+            //    defaultValue: 0);
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Events_CategoryId",
-                table: "Events",
-                column: "CategoryId");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Events_CategoryId",
+            //    table: "Events",
+            //    column: "CategoryId");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Events_Categories_CategoryId",

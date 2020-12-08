@@ -21,10 +21,10 @@ namespace CodingEventsDemo.Migrations
                 });
         }
 
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropTable(
-                name: "Tags");
-        }
+        //protected override void Down(MigrationBuilder migrationBuilder)
+        //{
+        //    migrationBuilder.DropTable(
+        //        name: "Tags");
+        //}
     }
 }
