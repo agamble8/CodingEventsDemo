@@ -67,7 +67,7 @@ namespace CodingEventsDemo.Controllers
 
                 List<EventTag> existingItems = context.EventTags
                     .Where(et => et.EventId == eventId)
-                    .Where(et => EventTag.TagId == tagId)
+                    .Where(et => et.TagId == tagId)
                     .ToList();
 
                 if (existingItems.Count == 0)
@@ -86,6 +86,17 @@ namespace CodingEventsDemo.Controllers
             }
 
             return View(viewModel);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            List<EventTag> eventTags = context.EventTags
+                .Where(et => et.TagId == id)
+                .Include(et => et.Event)
+                .Include(et => et.Tag)
+                .ToList();
+
+            return View(eventTags);
         }
         
     }
